@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTP - Lost & Found</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body data-lang="ar">
+
+<div class="auth-page-wrapper">
+    <div class="top-buttons-auth">
+        <a href="user_login.html" class="top-btn-auth" title="الرئيسية"><i class="fa-solid fa-house"></i></a>
+        <button class="top-btn-auth lang-toggle text-only">EN</button>
+    </div>
+
+    <div class="auth-box-container" style="border-top-color: var(--accent);">
+        <img src="https://i.postimg.cc/MTQwFp6T/Whats-App-Image-2026-03-06-at-1-02-33-AM.jpg" alt="Logo" class="logo-img" style="margin-bottom: 20px;">
+        <h2 data-i18n="auth_otp_title" style="color: var(--primary); font-weight: 800;">التحقق من البريد</h2>
+        <p data-i18n="auth_otp_desc" style="color: gray; margin-bottom: 20px; font-size: 14px;">أدخل الرمز المكون من 4 أرقام المرسل إلى بريدك الإلكتروني.</p>
+        
+        <div class="otp-inputs">
+            <input type="text" maxlength="1" class="otp-input" autofocus>
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+            <input type="text" maxlength="1" class="otp-input">
+        </div>
+        
+        <span class="timer-text" id="timerDisplay">إعادة الإرسال خلال: <span id="countdown">60</span> ثانية</span>
+        <button class="resend-btn" id="resendBtn">إعادة إرسال الرمز</button>
+
+        <button class="btn-primary-custom" data-i18n="auth_btn_otp" style="background: var(--accent); border-color: var(--accent);" onclick="window.location.href='reset.html'">التحقق والمتابعة</button>
+    </div>
+</div>
+
+<script src="js/global.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. الانتقال التلقائي بين المربعات
+    const inputs = document.querySelectorAll('.otp-input');
+    inputs.forEach((input, index) => {
+        input.addEventListener('keyup', function(e) {
+            // الانتقال للأمام عند كتابة رقم
+            if (this.value.length === 1 && index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+            // العودة للخلف عند مسح الرقم
+            if (e.key === 'Backspace' && index > 0 && this.value === '') {
+                inputs[index - 1].focus();
+            }
+        });
+    });
+
+    // 2. العداد
+    let count = 60;
+    const countdownEl = document.getElementById('countdown');
+    const timerDisplay = document.getElementById('timerDisplay');
+    const resendBtn = document.getElementById('resendBtn');
+
+    let timer = setInterval(() => {
+        count--;
+        countdownEl.textContent = count;
+        if(count <= 0) {
+            clearInterval(timer);
+            timerDisplay.style.display = 'none';
+            resendBtn.style.display = 'block';
+        }
+    }, 1000);
+});
+</script>
+</body>
+</html>

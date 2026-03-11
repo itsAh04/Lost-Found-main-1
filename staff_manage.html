@@ -1,0 +1,48 @@
+<div class="main-content">
+    <header>
+        <h2 id="pageTitle">Manage Staff</h2>
+    </header>
+
+    <div class="staff-form-container">
+        <h3><i class="fa-solid fa-user-plus me-2"></i> Add / Remove Staff</h3>
+        <form id="staffForm">
+            <div class="input-group">
+                <label>Staff Email</label>
+                <input type="email" id="staffEmail" placeholder="Enter staff email" required>
+            </div>
+            <div class="buttons">
+                <button type="submit" id="addStaffBtn" class="btn-add"><i class="fa-solid fa-plus"></i> Add Staff</button>
+                <button type="button" id="removeStaffBtn" class="btn-remove-main"><i class="fa-solid fa-trash"></i> Remove</button>
+            </div>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <div class="table-section">
+        <h3>Employees List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Last Update</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="staffTable">
+                <tr>
+                    <td>ahmad@example.com</td>
+                    <td class="status-active">Active</td>
+                    <td>2026-02-22 03:15</td>
+                    <td><button class="remove-btn"><i class="fa-solid fa-xmark"></i> Remove</button></td>
+                </tr>
+                <tr>
+                    <td>sara@example.com</td>
+                    <td class="status-removed">Removed</td>
+                    <td>2026-02-21 22:40</td>
+                    <td><button class="add-btn"><i class="fa-solid fa-check"></i> Add</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

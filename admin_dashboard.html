@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Lost & Found Management System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body data-lang="ar">
+
+<div class="sidebar">
+    <div class="sidebar-brand">
+        <img src="https://i.postimg.cc/MTQwFp6T/Whats-App-Image-2026-03-06-at-1-02-33-AM.jpg" alt="Logo" class="logo-img">
+        <h2>Lost & Found<br><span style="font-size: 13px; color: white; font-weight:500;">Management System</span></h2>
+    </div>
+    <ul>
+        <li><a href="admin_dashboard.html" class="active" data-i18n="nav_dash"></a></li>
+        <li><a href="lost_reports_admin.html" data-i18n="nav_lost"></a></li>
+        <li><a href="found_reports_admin.html" data-i18n="nav_found"></a></li>
+        <li><a href="matches.html" data-i18n="nav_matches"></a></li>
+        <li><a href="staff_manage.html" data-i18n="nav_staff"></a></li>
+        <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+        <li><a href="#" class="theme-toggle"><i class="fa-solid fa-moon"></i> الوضع الليلي</a></li>
+        <li><a href="#" class="lang-toggle"><i class="fa-solid fa-globe"></i> English</a></li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <header class="admin-header">
+        <div>
+            <h2 data-i18n="welcome">مرحباً بك، أيها المدير</h2>
+            <p data-i18n="welcome_desc">إليك إحصائيات النظام اليوم</p>
+        </div>
+        <div><i class="fa-solid fa-bell" style="font-size: 28px; color: var(--primary); cursor: pointer;"></i></div>
+    </header>
+
+    <div class="dashboard-cards">
+        <div class="stat-card"><div><p data-i18n="stat_lost">إجمالي المفقودات</p><h3 style="font-size: 45px;">142</h3></div><i class="fa-solid fa-box-open"></i></div>
+        <div class="stat-card"><div><p data-i18n="stat_found">إجمالي المعثورات</p><h3 style="font-size: 45px;">89</h3></div><i class="fa-solid fa-warehouse"></i></div>
+        <div class="stat-card" style="border-bottom-color: var(--success);"><div><p data-i18n="stat_matches">المطابقات النشطة</p><h3 style="color: var(--success); font-size: 45px;">34</h3></div><i class="fa-solid fa-robot" style="color: rgba(39, 174, 96, 0.4);"></i></div>
+    </div>
+
+    <div class="map-container" id="mapContainerBox">
+        <div class="map-header">
+            <h3 data-i18n="map_title"><i class="fa-solid fa-map-location-dot"></i> خريطة المطار</h3>
+            <button id="expandMapBtn" class="btn-primary-custom" data-i18n="btn_expand" style="width: auto;"><i class="fa-solid fa-expand"></i> تكبير الخريطة</button>
+            <button id="closeMapBtn" class="close-map-btn" data-i18n="btn_close"><i class="fa-solid fa-xmark"></i> إغلاق الخريطة</button>
+        </div>
+        
+        <div class="smart-map">
+            <div class="zone z-1"><i class="fa-solid fa-plane"></i> T1 (A)</div>
+            <div class="zone z-2"><i class="fa-solid fa-plane"></i> T1 (B)</div>
+            <div class="zone z-3"><i class="fa-solid fa-plane"></i> T2 (C)</div>
+            <div class="zone z-4"><i class="fa-solid fa-plane"></i> T2 (D)</div>
+            <div class="zone z-5"><i class="fa-solid fa-plane"></i> T3 (E)</div>
+            <div class="zone z-6"><i class="fa-solid fa-crown"></i> قاعة VIP</div>
+            
+            <div class="zone z-7"><i class="fa-solid fa-door-open"></i> بوابات 1-5</div>
+            <div class="zone z-8"><i class="fa-solid fa-door-open"></i> بوابات 6-10</div>
+            <div class="zone z-9"><i class="fa-solid fa-door-open"></i> بوابات 11-15</div>
+            <div class="zone z-10"><i class="fa-solid fa-door-open"></i> بوابات 16-20</div>
+            <div class="zone z-11"><i class="fa-solid fa-door-open"></i> بوابات 21-25</div>
+            <div class="zone z-12"><i class="fa-solid fa-briefcase-medical"></i> عيادة</div>
+
+            <div class="zone z-13"><i class="fa-solid fa-bag-shopping"></i> سوق حرة 1</div>
+            <div class="zone z-14"><i class="fa-solid fa-bag-shopping"></i> سوق حرة 2</div>
+            <div class="zone z-15"><i class="fa-solid fa-utensils"></i> مطاعم</div>
+            <div class="zone z-16"><i class="fa-solid fa-mug-hot"></i> كافيهات</div>
+            <div class="zone z-17"><i class="fa-solid fa-chair"></i> استراحة 1</div>
+            <div class="zone z-18"><i class="fa-solid fa-chair"></i> استراحة 2</div>
+
+            <div class="zone z-19"><i class="fa-solid fa-shield-halved"></i> تفتيش 1</div>
+            <div class="zone z-20"><i class="fa-solid fa-shield-halved"></i> تفتيش 2</div>
+            <div class="zone z-21"><i class="fa-solid fa-shield-halved"></i> تفتيش 3</div>
+            <div class="zone z-22"><i class="fa-solid fa-building-shield"></i> الجمارك</div>
+            <div class="zone z-23"><i class="fa-solid fa-building-shield"></i> مكاتب أمن</div>
+            <div class="zone z-24"><i class="fa-solid fa-bed"></i> فندق المطار</div>
+
+            <div class="zone z-25"><i class="fa-solid fa-suitcase-rolling"></i> أمتعة 1</div>
+            <div class="zone z-26"><i class="fa-solid fa-suitcase-rolling"></i> أمتعة 2</div>
+            <div class="zone z-27"><i class="fa-solid fa-suitcase-rolling"></i> أمتعة 3</div>
+            <div class="zone z-28"><i class="fa-solid fa-square-parking"></i> مواقف P1</div>
+            <div class="zone z-29"><i class="fa-solid fa-truck-fast"></i> الشحن (Cargo)</div>
+            <div class="zone z-30"><i class="fa-solid fa-box-open"></i> مكتب المفقودات</div>
+
+            <div class="staff-tracker st-1"><div class="staff-dot"></div><span>أمن 1</span></div>
+            <div class="staff-tracker st-2"><div class="staff-dot"></div><span>أمن 2</span></div>
+            <div class="staff-tracker st-3"><div class="staff-dot"></div><span>أمن 3</span></div>
+            <div class="staff-tracker st-4"><div class="staff-dot"></div><span>أمن 4</span></div>
+            <div class="staff-tracker st-5"><div class="staff-dot"></div><span>أمن 5</span></div>
+            <div class="staff-tracker st-6"><div class="staff-dot"></div><span>استرجاع 1</span></div>
+            <div class="staff-tracker st-7"><div class="staff-dot"></div><span>استرجاع 2</span></div>
+            <div class="staff-tracker st-8"><div class="staff-dot"></div><span>مشرف 1</span></div>
+            <div class="staff-tracker st-9"><div class="staff-dot"></div><span>مشرف 2</span></div>
+            <div class="staff-tracker st-10"><div class="staff-dot"></div><span>مدير</span></div>
+
+            <div class="user-tracker u-1"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-2"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-3"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-4"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-5"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-6"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-7"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-8"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-9"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-10"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-11"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-12"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-13"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-14"><div class="user-dot"></div><span>مسافر</span></div>
+            <div class="user-tracker u-15"><div class="user-dot"></div><span>مسافر</span></div>
+        </div>
+        
+        <div style="margin-top: 20px; font-size: 14px; font-weight: bold; color: var(--primary); display: flex; gap: 20px; justify-content: center;">
+            <span><i class="fa-solid fa-circle" style="color: #3498db;"></i> أمن/موظف</span>
+            <span><i class="fa-solid fa-circle" style="color: #bdc3c7;"></i> مسافر</span>
+        </div>
+    </div>
+</div>
+
+<script src="js/global.js"></script>
+</body>
+</html>

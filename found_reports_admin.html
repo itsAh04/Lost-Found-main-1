@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Found Reports - Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="found_reports_admin.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Lost & Found</h2>
+    <ul>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="lost_reports_admin.html">Lost Reports</a></li>
+        <li><a href="found_reports_admin.html" class="active">Found Reports</a></li>
+        <li><a href="staff_manage.html">Staff</a></li>
+        <li><a href="matches.html">Matches</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">⚙️ Settings</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" id="langToggle">🌐 AR</a></li>
+                <li><a href="#" id="themeToggle">🌙 Dark Mode</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2 id="pageTitle">Found Reports (Admin)</h2>
+    </header>
+
+    <!-- Table -->
+    <div class="table-section">
+        <h3 id="tableTitle">All Found Reports</h3>
+        <input type="text" id="searchInput" placeholder="Search found reports...">
+        <table>
+            <thead>
+                <tr>
+                    <th id="thId">ID</th>
+                    <th id="thItem">Item</th>
+                    <th id="thCategory">Category</th>
+                    <th id="thStatus">Status</th>
+                    <th id="thDate">Date</th>
+                    <th id="thFinder">Finder</th>
+                    <th id="thContact">Contact</th>
+                </tr>
+            </thead>
+            <tbody id="foundReportsTable">
+                <tr>
+                    <td>1</td>
+                    <td>Wallet</td>
+                    <td>Bags</td>
+                    <td>Pending</td>
+                    <td>2026-02-15</td>
+                    <td>Omar Saleh</td>
+                    <td>omar@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Laptop</td>
+                    <td>Electronics</td>
+                    <td>Verified</td>
+                    <td>2026-02-16</td>
+                    <td>Lina Ahmad</td>
+                    <td>lina@example.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Birth Certificate</td>
+                    <td>Documents</td>
+                    <td>Closed</td>
+                    <td>2026-02-17</td>
+                    <td>Khaled Youssef</td>
+                    <td>kyoussef@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="found_reports_admin.js"></script>
+</body>
+</html>

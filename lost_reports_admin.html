@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost Reports - SkyPort Admin</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin_dashboard.css"> 
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="logo-wrapper text-center" style="margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">
+        <img src="https://i.postimg.cc/MTQwFp6T/Whats-App-Image-2026-03-06-at-1-02-33-AM.jpg" alt="Logo" style="width: 80px; border-radius: 12px; margin-bottom: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        <h2 style="color: var(--brand-accent, #E28327); font-size: 18px; font-weight: 700; margin: 0;">Lost & Found</h2>
+    </div>
+    <ul>
+        <li><a href="admin_dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+        <li><a href="lost_reports_admin.html" class="active"><i class="fa-solid fa-box-open"></i> Lost Reports</a></li>
+        <li><a href="found_reports_admin.html"><i class="fa-solid fa-magnifying-glass"></i> Found Reports</a></li>
+        <li><a href="staff_manage.html"><i class="fa-solid fa-users"></i> Staff</a></li>
+        <li><a href="matches.html"><i class="fa-solid fa-robot"></i> Matches</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle"><i class="fa-solid fa-gear"></i> Settings</a>
+            <ul class="dropdown-menu">
+                <li><a href="#" id="langToggle">🌐 AR</a></li>
+                <li><a href="#" id="themeToggle">🌙 Dark Mode</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <header>
+        <h2 id="pageTitle">Lost Reports (Admin)</h2>
+    </header>
+
+    <div class="table-section">
+        <h3 id="tableTitle">All Lost Reports</h3>
+        <input type="text" id="searchInput" placeholder="Search lost reports...">
+        <table>
+            <thead>
+                <tr>
+                    <th id="thId">ID</th>
+                    <th id="thItem">Item</th>
+                    <th id="thCategory">Category</th>
+                    <th id="thStatus">Status</th>
+                    <th id="thDate">Date</th>
+                    <th id="thReporter">Reporter</th>
+                    <th id="thContact">Contact</th>
+                </tr>
+            </thead>
+            <tbody id="lostReportsTable">
+                <tr>
+                    <td>1</td>
+                    <td>Black Bag</td>
+                    <td>Bags</td>
+                    <td>Pending</td>
+                    <td>2026-02-10</td>
+                    <td>Ahmad Ali</td>
+                    <td>ahmad@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>iPhone</td>
+                    <td>Electronics</td>
+                    <td>Verified</td>
+                    <td>2026-02-11</td>
+                    <td>Sara Khalid</td>
+                    <td>sara@example.com</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="lost_reports_admin.js"></script>
+</body>
+</html>

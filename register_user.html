@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Lost & Found</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/global.css">
+<style>
+    /* ترتيب حقلي الباسورد بجانب بعضهما بدون تمدد المربع */
+    .passwords-row {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+    }
+    .passwords-row .input-group {
+        margin-bottom: 20px;
+    }
+    /* استجابة للهواتف المحمولة لتصبح تحت بعضها */
+    @media (max-width: 400px) {
+        .passwords-row {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+</style>
+</head>
+<body class="auth-body" data-lang="ar">
+
+<div class="auth-page-wrapper">
+    <div class="top-buttons-auth">
+        <a href="user_login.html" class="top-btn-auth" title="الرئيسية"><i class="fa-solid fa-house"></i></a>
+        <button class="top-btn-auth lang-toggle text-only">EN</button>
+    </div>
+
+    <div class="auth-box-container">
+        <img src="https://i.postimg.cc/MTQwFp6T/Whats-App-Image-2026-03-06-at-1-02-33-AM.jpg" alt="Logo" class="logo-img" style="margin-bottom: 10px;">
+        <h3 data-i18n="auth_reg_title" style="color: var(--primary); margin-bottom: 20px; font-weight: 800;">إنشاء حساب جديد</h3>
+        
+        <form action="otp.html">
+            <div class="input-group">
+                <label data-i18n="auth_name">الاسم الكامل</label>
+                <input type="text" data-i18n="auth_name_ph" placeholder="أحمد محمد" required>
+            </div>
+            <div class="input-group">
+                <label data-i18n="auth_email">البريد الإلكتروني</label>
+                <input type="email" data-i18n="auth_email_ph" placeholder="example@airport.com" required>
+            </div>
+            
+            <div class="passwords-row">
+                <div class="input-group">
+                    <label data-i18n="auth_pass">كلمة المرور</label>
+                    <div class="password-wrapper">
+                        <input type="password" required>
+                        <i class="fa-solid fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label data-i18n="auth_pass_conf">تأكيد المرور</label>
+                    <div class="password-wrapper">
+                        <input type="password" required>
+                        <i class="fa-solid fa-eye toggle-password"></i>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary-custom" data-i18n="auth_btn_reg">تسجيل حساب</button>
+        </form>
+        
+        <div class="auth-links" style="justify-content: center; margin-top: 15px;">
+            <a href="login.html" data-i18n="auth_have_acc">لديك حساب بالفعل؟ تسجيل الدخول</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Lost & Found</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/global.css">
+</head>
+<body data-lang="ar">
+
+<div class="auth-page-wrapper">
+    <div class="top-buttons-auth">
+        <a href="user_login.html" class="top-btn-auth" title="الرئيسية"><i class="fa-solid fa-house"></i></a>
+        <button class="top-btn-auth lang-toggle">EN</button>
+    </div>
+
+    <div class="auth-box-container">
+        <img src="https://i.postimg.cc/MTQwFp6T/Whats-App-Image-2026-03-06-at-1-02-33-AM.jpg" alt="Logo" class="logo-img" style="margin-bottom: 15px;">
+        <h2 data-i18n="auth_login_title" style="color: var(--primary); margin-bottom: 25px; font-weight: 800;">تسجيل الدخول للنظام</h2>
+        
+        <form action="user_login.html">
+            <div class="input-group">
+                <label data-i18n="auth_email">البريد الإلكتروني</label>
+                <input type="email" data-i18n="auth_email_ph" placeholder="example@airport.com" required>
+            </div>
+            <div class="input-group">
+                <label data-i18n="auth_pass">كلمة المرور</label>
+                <div class="password-wrapper">
+                    <input type="password" data-i18n="auth_pass_ph" placeholder="••••••••" required>
+                    <i class="fa-solid fa-eye toggle-password"></i>
+                </div>
+            </div>
+            <button type="submit" class="btn-primary-custom" data-i18n="auth_btn_login" style="margin-top: 15px; font-size: 16px;">دخول النظام</button>
+        </form>
+        
+        <div class="auth-links">
+            <a href="otp.html" data-i18n="auth_forgot">نسيت كلمة المرور؟</a>
+            <a href="register_user.html" data-i18n="auth_create">إنشاء حساب جديد</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/global.js"></script>
+</body>
+</html>
